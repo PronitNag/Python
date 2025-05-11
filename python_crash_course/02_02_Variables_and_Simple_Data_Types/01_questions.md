@@ -7,8 +7,20 @@
 **2-1. Simple Message**
 Create a file called `simple_message.py` that assigns a message to a variable and prints it.
 
+```python
+x=15
+print(x)
+```
+
 **2-2. Simple Messages**
 Create a file called `simple_messages.py` that assigns a message to a variable, prints it, then changes the value and prints the new message.
+
+```python
+x=15
+print(x)
+x=20
+print(x)
+```
 
 ### String Manipulation Exercises
 
@@ -16,8 +28,22 @@ Create a file called `simple_messages.py` that assigns a message to a variable, 
 Create a file called `personal_message.py` that uses a variable to represent a person's name and prints a message to that person.
 Example output: "Hello Eric, would you like to learn some Python today?"
 
+```python
+x="Pronit"
+print(x +" how are you")
+```
+
+```python
+name = "Pronit"
+
+# Create and print a personalized message
+message = f"Hello {name}, would you like to learn some Python today?"
+print(message)
+```
+
 **2-4. Name Cases**
 Create a file called `name_cases.py` that stores a person's name in a variable and prints it in lowercase, uppercase, and title case.
+
 
 **2-5. Famous Quote**
 Create a file called `famous_quote.py` that prints a quote and its author.
