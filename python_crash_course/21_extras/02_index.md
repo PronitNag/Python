@@ -25,7 +25,7 @@
   - Running Snippets of Python Code *Page 4*
   - About the Sublime Text Editor *Page 4*
 - Python on Different Operating Systems *Page 5*
-  - Python on Windows *Page 5*
+  - Python on Windows *Page 5* 
   - Python on macOS *Page 7*
   - Python on Linux *Page 8*
 - Running a Hello World Program *Page 9*
