@@ -1,42 +1,42 @@
 # Python List Exercises
 
 Try these short programs to get some firsthand experience with<br/>
-Python's lists. You might want to create a new folder for each 
-chapter's exercises to keep them organized.
+Python's lists. You might want to create a new folder for each<br/>
+chapter's exercises to keep them organized.<br/>
 
 ## Chapter 3 - Lists
 
 ### Exercise 3-1. Names
-Store the names of a few of your friends in a list called names. 
-Print each person's name by accessing each element in the list, one 
-at a time.
+Store the names of a few of your friends in a list called names. <br/>
+Print each person's name by accessing each element in the list, one <br/>
+at a time.<br/>
 
 ### Exercise 3-2. Greetings
-Start with the list you used in Exercise 3-1, but instead of just 
-printing each person's name, print a message to them. The text of 
-each message should be the same, but each message should be 
-personalized with the person's name.
+Start with the list you used in Exercise 3-1, but instead of just <br/>
+printing each person's name, print a message to them. The text of <br/>
+each message should be the same, but each message should be <br/>
+personalized with the person's name.<br/>
 
 ### Exercise 3-3. Your Own List
-Think of your favorite mode of transportation, such as a motorcycle 
-or a car, and make a list that stores several examples. Use your 
-list to print a series of statements about these items, such as 
-"I would like to own a Honda motorcycle."
+Think of your favorite mode of transportation, such as a motorcycle <br/>
+or a car, and make a list that stores several examples. Use your <br/>
+list to print a series of statements about these items, such as <br/>
+"I would like to own a Honda motorcycle."<br/>
 
-*The following exercises are a bit more complex than those in 
-Chapter 2, but they give you an opportunity to use lists in all 
-of the ways described.*
+*The following exercises are a bit more complex than those in <br/>
+Chapter 2, but they give you an opportunity to use lists in all <br/>
+of the ways described.*<br/>
 
 ### Exercise 3-4. Guest List
-If you could invite anyone, living or deceased, to dinner, who 
-would you invite? Make a list that includes at least three people 
-you'd like to invite to dinner. Then use your list to print a 
-message to each person, inviting them to dinner.
+If you could invite anyone, living or deceased, to dinner, who <br/>
+would you invite? Make a list that includes at least three people <br/>
+you'd like to invite to dinner. Then use your list to print a <br/>
+message to each person, inviting them to dinner.<br/>
 
 ### Exercise 3-5. Changing Guest List
-You just heard that one of your guests can't make the dinner, so 
-you need to send out a new set of invitations. You'll have to 
-think of someone else to invite.
+You just heard that one of your guests can't make the dinner, so <br/>
+you need to send out a new set of invitations. You'll have to <br/>
+think of someone else to invite.<br/>
 
 - Start with your program from Exercise 3-4. Add a print() call at 
   the end of your program stating the name of the guest who can't 
