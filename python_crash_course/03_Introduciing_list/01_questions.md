@@ -1,6 +1,6 @@
 # Python List Exercises
 
-Try these short programs to get some firsthand experience with 
+Try these short programs to get some firsthand experience with<br/>
 Python's lists. You might want to create a new folder for each 
 chapter's exercises to keep them organized.
 
