@@ -1,6 +1,4 @@
-# Chapter 1 Exercises
 
-The exercises in this chapter are exploratory in nature. Starting in Chapter 2, the challenges you'll solve will be based on what you've learned.
 
 ## 1-1. python.org
 Explore the Python home page (https://python.org/) to find topics that interest you. As you become familiar with Python, different parts of the site will be more useful to you.
