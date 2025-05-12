@@ -95,3 +95,395 @@
 - [Styling Your if Statements](#styling-your-if-statements)
 
 
+# Chapter 6: Dictionaries
+- A Simple Dictionary
+- Working with Dictionaries 
+  - Accessing Values in a Dictionary
+  - Adding New Key-Value Pairs
+  - Starting with an Empty Dictionary
+  - Modifying Values in a Dictionary
+  - Removing Key-Value Pairs
+  - A Dictionary of Similar Objects
+  - Using get() to Access Values
+- Looping Through a Dictionary
+  - Looping Through All Key-Value Pairs
+  - Looping Through All the Keys in a Dictionary
+  - Looping Through a Dictionary's Keys in a Particular Order
+  - Looping Through All Values in a Dictionary
+- Nesting
+  - A List of Dictionaries
+  - A List in a Dictionary
+  - A Dictionary in a Dictionary
+- Summary
+
+# Chapter 7: User Input and While Loops
+- How the input() Function Works 
+  - Writing Clear Prompts
+  - Using int() to Accept Numerical Input
+  - The Modulo Operator
+- Introducing while Loops
+  - The while Loop in Action
+  - Letting the User Choose When to Quit
+  - Using a Flag
+  - Using break to Exit a Loop
+  - Using continue in a Loop
+  - Avoiding Infinite Loops
+- Using a while Loop with Lists and Dictionaries
+  - Moving Items from One List to Another
+  - Removing All Instances of Specific Values from a List
+  - Filling a Dictionary with User Input
+- Summary
+
+# Chapter 8: Functions
+- Defining a Function 
+  - Passing Information to a Function
+  - Arguments and Parameters
+- Passing Arguments
+  - Positional Arguments
+  - Keyword Arguments
+  - Default Values
+  - Equivalent Function Calls
+  - Avoiding Argument Errors
+- Return Values
+  - Returning a Simple Value
+  - Making an Argument Optional
+  - Returning a Dictionary
+  - Using a Function with a while Loop
+- Passing a List
+  - Modifying a List in a Function
+  - Preventing a Function from Modifying a List
+- Passing an Arbitrary Number of Arguments
+  - Mixing Positional and Arbitrary Arguments
+  - Using Arbitrary Keyword Arguments
+- Storing Your Functions in Modules
+  - Importing an Entire Module
+  - Importing Specific Functions
+  - Using as to Give a Function an Alias
+  - Using as to Give a Module an Alias
+  - Importing All Functions in a Module
+- Styling Functions
+- Summary
+
+# Chapter 9: Classes
+- Creating and Using a Class 
+  - Creating the Dog Class
+  - Making an Instance from a Class
+- Working with Classes and Instances
+  - The Car Class
+  - Setting a Default Value for an Attribute
+  - Modifying Attribute Values
+- Inheritance
+  - The init() Method for a Child Class
+  - Defining Attributes and Methods for the Child Class
+  - Overriding Methods from the Parent Class
+  - Instances as Attributes
+  - Modeling Real-World Objects
+- Importing Classes
+  - Importing a Single Class
+  - Storing Multiple Classes in a Module
+  - Importing Multiple Classes from a Module
+  - Importing an Entire Module
+  - Importing All Classes from a Module
+  - Importing a Module into a Module
+  - Using Aliases
+  - Finding Your Own Workflow
+- The Python Standard Library
+- Styling Classes
+- Summary
+
+# Chapter 10: Files and Exceptions
+- Reading from a File 
+  - Reading an Entire File
+  - File Paths
+  - Reading Line by Line
+  - Making a List of Lines from a File
+  - Working with a File's Contents
+  - Large Files: One Million Digits
+  - Is Your Birthday Contained in Pi?
+- Writing to a File
+  - Writing to an Empty File
+  - Writing Multiple Lines
+  - Appending to a File
+- Exceptions
+  - Handling the ZeroDivisionError Exception
+  - Using try-except Blocks
+  - Using Exceptions to Prevent Crashes
+  - The else Block
+  - Handling the FileNotFoundError Exception
+  - Analyzing Text
+  - Working with Multiple Files
+  - Failing Silently
+  - Deciding Which Errors to Report
+- Storing Data
+  - Using json.dump() and json.load()
+  - Saving and Reading User-Generated Data
+  - Refactoring
+- Summary
+
+# Chapter 11: Testing Your Code
+- Testing a Function 
+  - Unit Tests and Test Cases
+  - A Passing Test
+  - A Failing Test
+  - Responding to a Failed Test
+  - Adding New Tests
+- Testing a Class
+  - A Variety of Assert Methods
+  - A Class to Test
+  - Testing the AnonymousSurvey Class
+  - The setUp() Method
+
+# Chapter 12: A Ship that Fires Bullets
+- Planning Your Project
+- Installing Pygame
+- Starting the Game Project
+- Creating a Pygame Window and Responding to User Input 
+  - Setting the Background Color
+  - Creating a Settings Class
+- Adding the Ship Image 
+  - Creating the Ship Class
+  - Drawing the Ship to the Screen
+- Refactoring: The _check_events() and _update_screen() Methods 
+  - The _check_events() Method
+  - The _update_screen() Method
+- Piloting the Ship 
+  - Responding to a Keypress
+  - Allowing Continuous Movement
+  - Moving Both Left and Right
+  - Adjusting the Ship's Speed
+  - Limiting the Ship's Range
+  - Refactoring _check_events()
+  - Pressing Q to Quit
+  - Running the Game in Fullscreen Mode
+- A Quick Recap 
+  - alien_invasion.py
+  - settings.py
+  - ship.py
+- Shooting Bullets 
+  - Adding the Bullet Settings
+  - Creating the Bullet Class
+  - Storing Bullets in a Group
+  - Firing Bullets
+  - Deleting Old Bullets
+  - Limiting the Number of Bullets
+  - Creating the _update_bullets() Method
+
+# Chapter 13: Aliens!
+- Reviewing the Project
+- Creating the First Alien 
+  - Creating the Alien Class
+  - Creating an Instance of the Alien
+- Building the Alien Fleet 
+  - Determining How Many Aliens Fit in a Row
+  - Creating a Row of Aliens
+  - Refactoring _create_fleet()
+  - Adding Rows
+- Making the Fleet Move 
+  - Moving the Aliens Right
+  - Creating Settings for Fleet Direction
+  - Checking Whether an Alien Has Hit the Edge
+  - Dropping the Fleet and Changing Direction
+- Shooting Aliens 
+  - Detecting Bullet Collisions
+  - Making Larger Bullets for Testing
+  - Repopulating the Fleet
+  - Speeding Up the Bullets
+  - Refactoring _update_bullets()
+- Ending the Game 
+  - Detecting Alien and Ship Collisions
+  - Responding to Alien and Ship Collisions
+  - Aliens that Reach the Bottom of the Screen
+  - Game Over!
+  - Identifying When Parts of the Game Should Run
+- Summary
+
+# Chapter 14: Scoring
+- Adding the Play Button 
+  - Creating a Button Class
+  - Drawing the Button to the Screen
+  - Starting the Game
+  - Resetting the Game
+  - Deactivating the Play Button
+  - Hiding the Mouse Cursor
+- Leveling Up 
+  - Modifying the Speed Settings
+  - Resetting the Speed
+- Scoring 
+  - Displaying the Score
+  - Making a Scoreboard
+  - Updating the Score as Aliens Are Shot Down
+  - Resetting the Score
+  - Making Sure to Score All Hits
+  - Increasing Point Values
+  - Rounding the Score
+  - High Scores
+  - Displaying the Level
+  - Displaying the Number of Ships
+- Summary
+
+# Project 2: Data Visualization
+
+# Chapter 15: Generating Data
+- Installing Matplotlib
+- Plotting a Simple Line Graph 
+  - Changing the Label Type and Line Thickness
+  - Correcting the Plot
+  - Using Built-in Styles
+- Plotting and Styling Individual Points with scatter() 
+  - Plotting a Series of Points with scatter()
+  - Calculating Data Automatically
+  - Defining Custom Colors
+  - Using a Colormap
+  - Saving Your Plots Automatically
+- Random Walks 
+  - Creating the RandomWalk() Class
+  - Choosing Directions
+  - Plotting the Random Walk
+  - Generating Multiple Random Walks
+  - Styling the Walk
+- Rolling Dice with Plotly 
+  - Installing Plotly
+  - Creating the Die Class
+  - Rolling the Die
+  - Analyzing the Results
+  - Making a Histogram
+  - Rolling Two Dice
+  - Rolling Dice of Different Sizes
+- Summary
+
+# Chapter 16: Downloading Data
+- The CSV File Format 
+  - Parsing the CSV File Headers
+  - Printing the Headers and Their Positions
+  - Extracting and Reading Data
+  - Plotting Data in a Temperature Chart
+  - The datetime Module
+  - Plotting Dates
+  - Plotting a Longer Timeframe
+  - Plotting a Second Data Series
+  - Shading an Area in the Chart
+  - Error Checking
+  - Downloading Your Own Data
+- Mapping Global Data Sets: JSON Format 
+  - Downloading Earthquake Data
+  - Examining JSON Data
+  - Making a List of All Earthquakes
+  - Extracting Magnitudes
+  - Extracting Location Data
+  - Building a World Map
+  - A Different Way of Specifying Chart Data
+  - Customizing Marker Size
+  - Customizing Marker Colors
+  - Other Colorscales
+  - Adding Hover Text
+- Summary
+
+# Chapter 17: Working with APIs
+- Using a Web API 
+  - Git and GitHub
+  - Requesting Data Using an API Call
+  - Installing Requests
+  - Processing an API Response
+  - Working with the Response Dictionary
+  - Summarizing the Top Repositories
+  - Monitoring API Rate Limits
+- Visualizing Repositories Using Plotly 
+  - Refining Plotly Charts
+  - Adding Custom Tooltips
+  - Adding Clickable Links to Our Graph
+  - More About Plotly and the GitHub API
+- The Hacker News API
+- Summary
+
+# Project 3: Web Applications
+
+# Chapter 18: Getting Started with Django
+- Setting Up a Project 
+  - Writing a Spec
+  - Creating a Virtual Environment
+  - Activating the Virtual Environment
+  - Installing Django
+  - Creating a Project in Django
+  - Creating the Database
+  - Viewing the Project
+- Starting an App 
+  - Defining Models
+  - Activating Models
+  - The Django Admin Site
+  - Defining the Entry Model
+  - Migrating the Entry Model
+  - Registering Entry with the Admin Site
+  - The Django Shell
+- Making Pages: The Learning Log Home Page 
+  - Mapping a URL
+  - Writing a View
+  - Writing a Template
+- Building Additional Pages 
+  - Template Inheritance
+  - The Topics Page
+  - Individual Topic Pages
+- Summary
+
+# Chapter 19: User Accounts
+- Allowing Users to Enter Data 
+  - Adding New Topics
+  - Adding New Entries
+  - Editing Entries
+- Setting Up User Accounts 
+  - The users App
+  - The Login Page
+  - Logging Out
+  - The Registration Page
+- Allowing Users to Own Their Data 
+  - Restricting Access with @login_required
+  - Connecting Data to Certain Users
+  - Restricting Topics Access to Appropriate Users
+  - Protecting a User's Topics
+  - Protecting the edit_entry Page
+  - Associating New Topics with the Current User
+- Summary
+
+# Chapter 20: Styling and Deploying an App
+- Styling Learning Log 
+  - The django-bootstrap4 App
+  - Using Bootstrap to Style Learning Log
+  - Modifying base.html
+  - Styling the Home Page Using a Jumbotron
+  - Styling the Login Page
+  - Styling the Topics Page
+  - Styling the Entries on the Topic Page
+- Deploying Learning Log 
+  - Making a Heroku Account
+  - Installing the Heroku CLI
+  - Installing Required Packages
+  - Creating a requirements.txt File
+  - Specifying the Python Runtime
+  - Modifying settings.py for Heroku
+  - Making a Procfile to Start Processes
+  - Using Git to Track the Project's Files
+  - Pushing to Heroku
+  - Setting Up the Database on Heroku
+  - Refining the Heroku Deployment
+  - Securing the Live Project
+  - Committing and Pushing Changes
+  - Setting Environment Variables on Heroku
+  - Creating Custom Error Pages
+  - Ongoing Development
+  - The SECRET_KEY Setting
+  - Deleting a Project on Heroku
+- Summary
+
+# Afterword
+
+# Appendix A: Installation and Troubleshooting
+- Python on Windows 
+  - Finding the Python Interpreter
+  - Adding Python to Your Path Variable
+  - Reinstalling Python
+- Python on macOS 
+  - Installing Homebrew
+  - Installing Python
+- Python on Linux
+- Python Keywords and Built-in Functions 
+  - Python Keywords
+  - Python Built-in Functions
