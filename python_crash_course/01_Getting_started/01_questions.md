@@ -123,12 +123,6 @@ Python errors generally fall into two categories:
 1. **Syntax Errors**: The code violates Python's grammar rules (missing parentheses, quotes, etc.)
 2. **Runtime Errors**: The syntax is valid, but something goes wrong during execution (calling undefined functions, operations on incompatible types, etc.)
 
-Typos in the actual content of strings don't cause errors because they don't violate any rules - they just change the output. Python doesn't have a concept of "correct spelling" for your string content.
-
-Understanding error messages is crucial for debugging. Python tries to be helpful by pointing to where the error occurred and describing what went wrong, though sometimes the actual mistake might be earlier in the code than where Python detects it.
-
-
-
 ## 1-3. Infinite Skills
 If you had infinite programming skills, what would you build?<br/>
 You're about to learn how to program. If you have an end goal in mind, <br/>
