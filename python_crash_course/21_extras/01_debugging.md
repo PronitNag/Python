@@ -1,180 +1,258 @@
-# Python Debugging Guide in Hinglish
+# Python में Debugging कैसे करें
 
-## Python Mein Debugging Kaise Karein
+## Introduction
 
-Hello dosto! Aaj hum baat karenge ki Python mein debugging kaise karte hain. Jab aap code likhte hain, toh errors aana common hai. Lekin tension na lo, debugging se hum in errors ko fix kar sakte hain!
+Debugging एक ऐसा process है जिसमें हम program के errors को 
+identify और fix करते हैं। Iss tutorial में, hum python में 
+debugging के different tarike seekhenge.
 
-## Table of Contents
-- [Basic Debugging Techniques](#basic-debugging-techniques)
-- [Print Statement Se Debugging](#print-statement-se-debugging)
-- [Assert Statement Ka Use](#assert-statement-ka-use)
-- [Python Debugger (PDB)](#python-debugger-pdb)
-- [IDE Debugging Tools](#ide-debugging-tools)
-- [Logging Module](#logging-module)
-- [Exception Handling](#exception-handling)
-- [Best Practices](#best-practices)
+## 1. Print Statements का Use
 
-## Basic Debugging Techniques
-
-### Print Statement Se Debugging
-
-Sabse simple tarika hai `print()` statement use karna. Isse aap variables ke values aur code execution ka flow check kar sakte hain:
+Sabse simple debugging technique है print statements का use karna.
 
 ```python
-def total_calculate_karo(items):
-    print(f"Items list mili hai: {items}")
-    total = 0
-    for item in items:
-        total += item
-        print(f"Item {item} add kiya, abhi total hai: {total}")
-    print(f"Final total: {total}")
-    return total
+def add_numbers(a, b):
+    print(f"Adding {a} and {b}")  # Check input values
+    result = a + b
+    print(f"Result is {result}")  # Check output
+    return result
 
-result = total_calculate_karo([10, 20, 30])
+sum_result = add_numbers(5, "7")  # This will cause an error
 ```
 
-Jab bhi aapko koi doubt ho ki code kaise chal raha hai, print statement daal dijiye. Ye bahut simple aur effective tarika hai.
-
-### Assert Statement Ka Use
-
-Assert statements condition check karte hain. Agar condition galat hai, toh error throw karte hain:
-
-```python
-def divide(a, b):
-    # Zero se divide na ho isliye check
-    assert b != 0, "Zero se divide nahi kar sakte!"
-    return a / b
+Error output:
+```
+Adding 5 and 7
+Traceback (most recent call last):
+  File "debug_example.py", line 7, in <module>
+    sum_result = add_numbers(5, "7")
+  File "debug_example.py", line 3, in add_numbers
+    result = a + b
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ```
 
-## Python Debugger (PDB)
+Humne print statements se dekha ki function ko 5 aur "7" (ek string)
+mila, jo error ka reason hai.
 
-Python ka built-in debugger hai `pdb`. Isse aap code ko line-by-line execute kar sakte hain:
+## 2. Python Debugger (pdb) का Use
+
+Python ka built-in debugger 'pdb' bahut powerful hai.
 
 ```python
 import pdb
 
-def complex_function():
-    x = 10
-    y = 0
-    pdb.set_trace()  # Code yahan rukega aur debug mode mein jayega
-    result = x / y  # Normally isse ZeroDivisionError aayega
-    return result
+def calculate_average(numbers):
+    pdb.set_trace()  # Debugger will stop here
+    total = 0
+    for num in numbers:
+        total += num
+    return total / len(numbers)
 
-complex_function()
+# Function call with a list containing a string
+calculate_average([10, 20, 30, "40"])
 ```
 
-### PDB Ke Important Commands
+PDB commands:
+- `n` - next line
+- `c` - continue execution
+- `p variable_name` - print variable value
+- `q` - quit debugger
 
-| Command | Kya Karta Hai |
-|---------|---------------|
-| `n` (next) | Current line execute karke next line par jata hai |
-| `s` (step) | Function ke andar jata hai |
-| `c` (continue) | Code ko normally chalata hai, agla breakpoint tak |
-| `q` (quit) | Debugger se bahar nikalta hai |
-| `l` (list) | Current code position dikhata hai |
-| `p expression` | Kisi expression ka value print karta hai |
-| `w` (where) | Stack trace dikhata hai |
+## 3. Try-Except Blocks का Use
 
-### Python 3.7+ Mein Breakpoint() Ka Use
-
-Python 3.7 ya usse new version mein, aap `breakpoint()` function use kar sakte hain:
+Try-except blocks errors ko handle karne ke liye best hai.
 
 ```python
-def divide(a, b):
-    if b == 0:
-        breakpoint()  # Jab b zero hoga, code yahan rukega
-    return a / b
+def divide_numbers(a, b):
+    try:
+        result = a / b
+        return result
+    except ZeroDivisionError:
+        print("Error: Division by zero!")
+        return None
+    except TypeError as e:
+        print(f"Error: {e}")
+        return None
+
+# Testing with different inputs
+print(divide_numbers(10, 2))    # Works fine
+print(divide_numbers(10, 0))    # Division by zero
+print(divide_numbers("10", 2))  # Type error
 ```
 
-## IDE Debugging Tools
+Output:
+```
+5.0
+Error: Division by zero!
+None
+Error: unsupported operand type(s) for /: 'str' and 'int'
+None
+```
 
-Aajkal bahut sare IDEs graphical debugging tools dete hain:
+## 4. Logging का Use
 
-### Popular Python IDEs with Debugging
-- **PyCharm**: Bahut powerful debugging features hai
-- **VS Code**: Python extension ke saath accha debugging support
-- **Spyder**: Scientific Python ke liye accha IDE
-- **IDLE**: Python ke default IDE mein basic debugging
-
-In sabme ye features milte hain:
-- Mouse click se breakpoint set karna
-- Step-by-step code execution
-- Variables ki values dekhna
-- Execution ke beech expressions evaluate karna
-
-## Logging Module
-
-`print()` se thoda advanced hai Python ka `logging` module:
+Print statements की jagah logging better option hai.
 
 ```python
 import logging
 
-# Logging setup
+# Configure logging
 logging.basicConfig(
     level=logging.DEBUG,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    filename='app.log'
+    format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-def average_nikalo(numbers):
-    logging.info(f"In numbers ka average nikal rahe hain: {numbers}")
-    if not numbers:
-        logging.warning("Empty list di gayi hai!")
-        return 0
-    total = sum(numbers)
-    logging.debug(f"Total calculate hua: {total}")
-    average = total / len(numbers)
-    logging.info(f"Average nikala: {average}")
-    return average
+def process_data(data):
+    logging.debug(f"Processing data: {data}")
+    
+    if not isinstance(data, list):
+        logging.error("Data must be a list")
+        return None
+    
+    try:
+        result = [item * 2 for item in data]
+        logging.info(f"Processing complete. Result: {result}")
+        return result
+    except Exception as e:
+        logging.exception(f"Error processing data: {e}")
+        return None
 
-average_nikalo([1, 2, 3, 4, 5])
+# Test with different inputs
+process_data([1, 2, 3])
+process_data("not a list")
+process_data([1, 2, "3"])
 ```
 
-### Logging Ke Levels
+## 5. Assertions का Use
 
-| Level | Function | Kab Use Karein |
-|-------|----------|----------------|
-| DEBUG | `logging.debug()` | Details jab deep analysis chahiye |
-| INFO | `logging.info()` | Normal information ke liye |
-| WARNING | `logging.warning()` | Kuch unexpected hua hai |
-| ERROR | `logging.error()` | Serious problem, function fail hua |
-| CRITICAL | `logging.critical()` | Bahut bada error, program crash ho sakta hai |
-
-## Exception Handling
-
-Exception handling se bhi debugging mein help milti hai:
+Assertions code mein conditions verify karne mein help karte hain.
 
 ```python
+def get_user_age(age):
+    assert isinstance(age, (int, float)), "Age must be a number"
+    assert age >= 0, "Age cannot be negative"
+    
+    return f"User is {age} years old"
+
 try:
-    result = x / y
-except ZeroDivisionError as e:
-    print(f"Error aaya: {e}")
-    # Error handle karo
-except Exception as e:
-    print(f"Koi unexpected error: {e}")
-    # Generic error handling
-else:
-    # Agar koi error nahi aaya
-    print("Calculation successful raha")
-finally:
-    # Ye code hamesha chalega, error aaye ya na aaye
-    print("Calculation khatam")
+    print(get_user_age(25))     # Works fine
+    print(get_user_age(-5))     # Will raise assertion error
+except AssertionError as e:
+    print(f"Error: {e}")
 ```
 
-## Best Practices
+## 6. Debugging Complex Functions
 
-1. **Problem Ko Isolate Karo**: Pehle pata karo problem exactly kahan hai.
-2. **Version Control Use Karo**: Git jaise tools use karo taki debugging ke changes track kar sako.
-3. **Ek Baar Mein Ek Problem Fix Karo**: Saare problems ek saath solve karne ki koshish na karo.
-4. **Edge Cases Check Karo**: Jaise zero values, empty lists, etc.
-5. **Code Ko Modular Rakho**: Chote-chote functions banao, debugging easy hogi.
-6. **Rubber Duck Debugging**: Kisi object (ya dost) ko code explain karo line by line, aksar problem samajh aa jayega.
+Ek complex function ko debug karne ka example:
 
-## Debug Karte Waqt Yaad Rakhne Wali Baatein
+```python
+def calculate_statistics(data):
+    """Calculate mean, median and mode for given data."""
+    # Debug: Check input
+    print(f"Input data: {data[:5]}... (total: {len(data)} items)")
+    
+    try:
+        # Calculate mean
+        total = sum(data)
+        count = len(data)
+        mean = total / count
+        print(f"Debug: Mean calculation - {total}/{count} = {mean}")
+        
+        # Calculate median
+        sorted_data = sorted(data)
+        mid_point = count // 2
+        
+        if count % 2 == 0:
+            median = (sorted_data[mid_point-1] + sorted_data[mid_point]) / 2
+        else:
+            median = sorted_data[mid_point]
+        
+        print(f"Debug: Median is {median}")
+        
+        # Calculate mode
+        frequency = {}
+        for item in data:
+            if item in frequency:
+                frequency[item] += 1
+            else:
+                frequency[item] = 1
+                
+        mode = max(frequency, key=frequency.get)
+        print(f"Debug: Mode is {mode} (appears {frequency[mode]} times)")
+        
+        return {
+            "mean": mean,
+            "median": median,
+            "mode": mode,
+            "frequency": frequency
+        }
+        
+    except Exception as e:
+        print(f"Error occurred: {str(e)}")
+        return None
 
-1. Debugging mein patience zaroori hai. Kabhi-kabhi ek choti si galti dhoondhne mein ghanton lag sakte hain.
-2. Code ke blocks ko comment out karke dekho kaun sa part problem create kar raha hai.
-3. Variables ke values ko check karte raho execution ke different stages mein.
-4. Python ke official documentation ko refer karo agar kisi function ya module ke behavior ke bare mein confusion ho.
+# Test with sample data
+sample_data = [4, 1, 3, 5, 2, 5, 6, 7, 5, 8]
+result = calculate_statistics(sample_data)
+print(f"Final result: {result}")
+```
 
-Umeed hai ye guide aapki debugging journey mein helpful rahegi! Happy debugging, dosto! 🐍🔍
+## 7. Debugging ke liye VS Code Use Karna
+
+VS Code me debugging karne ke liye:
+
+1. Breakpoints lagayen (line number par click karke)
+2. Debug menu se "Start Debugging" select karein
+3. Variables, call stack, aur watch window check karein
+
+## 8. Unit Tests for Debugging
+
+Unit tests bugs ko early identify karne mein help karte hain.
+
+```python
+import unittest
+
+def is_prime(n):
+    """Check if a number is prime."""
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    
+    return True
+
+class TestPrimeFunctions(unittest.TestCase):
+    
+    def test_prime_numbers(self):
+        """Test known prime numbers."""
+        primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+        for num in primes:
+            self.assertTrue(is_prime(num), f"{num} should be prime")
+    
+    def test_non_prime_numbers(self):
+        """Test known non-prime numbers."""
+        non_primes = [1, 4, 6, 8, 9, 10, 12, 14, 15]
+        for num in non_primes:
+            self.assertFalse(is_prime(num), f"{num} should not be prime")
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+## Conclusion
+
+Python mein debugging multiple tarike se ki ja sakti hai. Good
+programmers alag-alag situations ke liye sahi technique choose
+karte hain. Regular debugging practice se aap better code likhenge
+aur problems jaldi solve kar payenge.
+
+Happy debugging!
