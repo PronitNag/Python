@@ -47,16 +47,44 @@ print(message)
 Create a file called `name_cases.py` that stores a person's name in a<br/>
 variable and prints it in lowercase, uppercase, and title case.<br/>
 
+```python
+# Demonstrate different string case transformations for a name
+
+# Store a person's name in a variable
+name = "Chandan Kumar"
+
+# Print the name in different cases
+print("Lowercase:", name.lower())
+print("Uppercase:", name.upper())
+print("Title Case:", name.title())
+```
+
 **2-5. Famous Quote**<br/>
 Create a file called `famous_quote.py` that prints a quote and its<br/>
 author.<br/>
 Example output: Albert Einstein once said, "A person who never made a<br/>
 mistake never tried anything new."<br/>
 
+```python
+# Quote 1
+author1 = "Albert Einstein"
+quote1 = "A person who never made a mistake never tried anything new."
+print(f"{author1} once said, \"{quote1}\"")
+
+print("\n")  # Add a blank line between quotes
+
+# Quote 2
+author2 = "Maya Angelou"
+quote2 = "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel."
+print(f"{author2} once said, \"{quote2}\"")
+```
+
 **2-6. Famous Quote 2**<br/>
 Create a file called `famous_quote_2.py` that stores the famous<br/>
 person's name in a variable called `famous_person` and the quote in<br/>
 a variable called `message`, then prints the message.<br/>
+
+
 
 **2-7. Stripping Names**<br/>
 Create a file called `stripping_names.py` that stores a person's name<br/>
