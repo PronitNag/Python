@@ -2,33 +2,60 @@
 
 ## क्या हैं Decorators? (What are Decorators?)
 
-Python में decorators एक special type के functions होते हैं जो दूसरे functions को modify करते हैं। यह एक तरह का "wrapper" होता है जो किसी existing function को नई functionality देता है बिना उसके original code को change किए। Simple words में, decorator एक function है जो दूसरे function को input के रूप में लेता है और उसे enhanced functionality के साथ return करता है।
+Python में decorators एक special type के functions होते हैं जो दूसरे 
+functions को modify करते हैं। यह एक तरह का "wrapper" होता है जो 
+किसी existing function को नई functionality देता है बिना उसके 
+original code को change किए। Simple words में, decorator एक function 
+है जो दूसरे function को input के रूप में लेता है और उसे enhanced 
+functionality के साथ return करता है।
 
 Decorators को special symbol `@` (at sign) से पहचाना जाता है।
 
 ## क्यों Use करें Decorators? (Why use Decorators?)
 
-1. **Code Reusability** - एक ही functionality को बार-बार लिखने की बजाय, आप एक decorator बना सकते हैं और उसे कई functions पर use कर सकते हैं
-2. **Clean and Maintainable Code** - decorators आपके code को छोटा और साफ रखने में help करते हैं
-3. **Separation of Concerns** - वे main logic और cross-cutting concerns (जैसे logging, authentication, etc.) को अलग रखने में मदद करते हैं
-4. **Extended Functionality** - existing functions में नई features add करना बिना original code को छेड़े
+1. **Code Reusability** - एक ही functionality को बार-बार लिखने की 
+   बजाय, आप एक decorator बना सकते हैं और उसे कई functions पर use 
+   कर सकते हैं
+   
+2. **Clean and Maintainable Code** - decorators आपके code को छोटा 
+   और साफ रखने में help करते हैं
+   
+3. **Separation of Concerns** - वे main logic और cross-cutting 
+   concerns (जैसे logging, authentication, etc.) को अलग रखने में 
+   मदद करते हैं
+   
+4. **Extended Functionality** - existing functions में नई features 
+   add करना बिना original code को छेड़े
 
 ## कहां Use होते हैं Decorators? (Where are Decorators used?)
 
-1. **Web Frameworks** - Django, Flask जैसे frameworks में `@login_required`, `@require_POST` जैसे decorators common हैं
+1. **Web Frameworks** - Django, Flask जैसे frameworks में 
+   `@login_required`, `@require_POST` जैसे decorators common हैं
+   
 2. **Authentication & Authorization** - user access control के लिए
+
 3. **Logging and Debugging** - function calls को track करने के लिए
+
 4. **Caching** - results को cache करने के लिए
-5. **Timing/Profiling** - function execution time को measure करने के लिए
+
+5. **Timing/Profiling** - function execution time को measure करने 
+   के लिए
+   
 6. **Input Validation** - parameters को validate करने के लिए
 
 ## कब Use करें Decorators? (When to use Decorators?)
 
 आप decorators तब use करें जब:
 
-1. आप किसी function के behavior को modify करना चाहते हैं बिना उसके implementation को change किए
-2. एक जैसी functionality को multiple functions पर apply करना चाहते हैं
-3. Cross-cutting concerns को implement करना है (logging, validation, etc.)
+1. आप किसी function के behavior को modify करना चाहते हैं बिना 
+   उसके implementation को change किए
+   
+2. एक जैसी functionality को multiple functions पर apply करना 
+   चाहते हैं
+   
+3. Cross-cutting concerns को implement करना है (logging, 
+   validation, etc.)
+   
 4. Code को modular और maintainable रखना चाहते हैं
 
 ## कैसे Create करें Decorators? (How to create Decorators?)
@@ -127,4 +154,9 @@ def update_profile(request):
 
 ## निष्कर्ष (Conclusion)
 
-Decorators Python programming का एक powerful feature हैं जो code को modular, readable और maintainable बनाता है। वे एक elegant way provide करते हैं cross-cutting concerns को handle करने के लिए और code duplication को reduce करते हैं। Python के ecosystem में, particularly web development और frameworks में, decorators आपको आसानी से advanced features implement करने में help करते हैं।
+Decorators Python programming का एक powerful feature हैं जो code को 
+modular, readable और maintainable बनाता है। वे एक elegant way 
+provide करते हैं cross-cutting concerns को handle करने के लिए और 
+code duplication को reduce करते हैं। Python के ecosystem में, 
+particularly web development और frameworks में, decorators आपको 
+आसानी से advanced features implement करने में help करते हैं।
